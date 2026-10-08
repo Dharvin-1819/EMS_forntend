@@ -8,7 +8,7 @@
     "server": "json-server --watch db.json --port 5000",
     "dev:all": "concurrently \"npm run dev\" \"npm run server\"",
     "build": "vite build",
-    "start": "vite preview --host 0.0.0.0 --port ${PORT:-4173}",
+    "start": "node node_modules/vite/bin/vite.js preview --host 0.0.0.0 --port 8080 --strictPort",
     "lint": "eslint .",
     "preview": "vite preview"
   },
