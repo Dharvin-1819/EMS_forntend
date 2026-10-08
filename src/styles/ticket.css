@@ -1,0 +1,449 @@
+/* ============================================================
+   EventPro Printable Ticket Pass Styles
+   Luxury boarding-pass layout with perforated stub and print media rules
+   ============================================================ */
+
+.ticket-pass-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.ticket-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: var(--surface-2, #1e293b);
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+  border-radius: var(--radius-lg, 12px);
+}
+
+.ticket-actions-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ticket-pass-card {
+  position: relative;
+  background: #ffffff;
+  color: #111827;
+  border: 2px solid #AD974F;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Top Header Band ────────────────────────────────────── */
+.ticket-header-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: #18181B;
+  color: #ffffff;
+  border-bottom: 2px solid #AD974F;
+}
+
+.ticket-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ticket-brand-logo {
+  font-size: 1.4rem;
+  color: #AD974F;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.ticket-brand-title {
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.ticket-brand-subtitle {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #AD974F;
+  text-transform: uppercase;
+}
+
+.ticket-meta-tag {
+  background: #AD974F;
+  color: #111827;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+/* ── Body Layout ────────────────────────────────────────── */
+.ticket-inner-grid {
+  display: flex;
+  position: relative;
+  background: #ffffff;
+}
+
+.ticket-main-section {
+  flex: 1;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ticket-event-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ticket-category-pill {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  background: rgba(173, 151, 79, 0.15);
+  color: #8E793E;
+  border: 1px solid rgba(173, 151, 79, 0.4);
+  border-radius: 4px;
+}
+
+.ticket-event-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #0f172a;
+  text-transform: uppercase;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.ticket-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 16px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.ticket-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ticket-detail-item.span-2 {
+  grid-column: span 2;
+}
+
+.ticket-detail-label {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.ticket-detail-value {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.ticket-detail-value.price-highlight {
+  color: #059669;
+  font-size: 1rem;
+}
+
+.ticket-detail-value.status-badge {
+  color: #0284c7;
+  font-weight: 800;
+}
+
+/* ── Barcode Strip ──────────────────────────────────────── */
+.ticket-barcode-strip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.barcode-bars {
+  color: #0f172a;
+}
+
+.ticket-serial-text {
+  font-family: monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: #475569;
+  font-weight: 700;
+}
+
+/* ── Perforated Divider ─────────────────────────────────── */
+.ticket-stub-divider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 24px;
+}
+
+.stub-dashed-line {
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 50%;
+  width: 0;
+  border-left: 2px dashed #94a3b8;
+  transform: translateX(-50%);
+}
+
+.stub-notch {
+  width: 20px;
+  height: 20px;
+  background: var(--bg, #0f172a);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.stub-notch.notch-top {
+  margin-top: -10px;
+  border-bottom: 2px solid #AD974F;
+}
+
+.stub-notch.notch-bottom {
+  margin-bottom: -10px;
+  border-top: 2px solid #AD974F;
+}
+
+/* ── Stub Section ───────────────────────────────────────── */
+.ticket-stub-section {
+  width: 210px;
+  min-width: 210px;
+  background: #f1f5f9;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: center;
+  border-left: 1px solid #e2e8f0;
+}
+
+.ticket-stub-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stub-label {
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #0f172a;
+}
+
+.stub-number {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #AD974F;
+}
+
+.ticket-qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.qr-scan-text {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #334155;
+}
+
+.ticket-stub-details {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background: #ffffff;
+  padding: 8px 6px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.stub-sublabel {
+  display: block;
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #64748b;
+}
+
+.stub-subvalue {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.stub-security-note {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+/* ── Footer Strip ───────────────────────────────────────── */
+.ticket-footer-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.68rem;
+  color: #64748b;
+}
+
+.ticket-auth-badge {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #059669;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 640px) {
+  .ticket-inner-grid {
+    flex-direction: column;
+  }
+  .ticket-stub-divider {
+    display: none;
+  }
+  .ticket-stub-section {
+    width: 100%;
+    min-width: 100%;
+    border-left: none;
+    border-top: 2px dashed #94a3b8;
+  }
+  .ticket-details-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   PRINT MEDIA RULES
+   Ensures ONLY the ticket card prints cleanly on paper / PDF
+   ============================================================ */
+@media print {
+  /* Hide standard page elements */
+  nav, .navbar, footer, .sidebar, .no-print, #modal-close-btn,
+  .modal-header, .modal-footer, button, .toasts, .toast-container {
+    display: none !important;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  /* Reset modal containers when printing */
+  .modal-overlay {
+    position: static !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    inset: auto !important;
+  }
+
+  .modal, .modal-lg {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .modal-body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .ticket-pass-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 20px 0 !important;
+  }
+
+  .ticket-pass-card {
+    box-shadow: none !important;
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+    page-break-inside: avoid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .ticket-header-band {
+    background: #111827 !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .ticket-meta-tag {
+    background: #e2e8f0 !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .ticket-pass-card * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .stub-notch {
+    background: #ffffff !important;
+    border: 1px solid #94a3b8 !important;
+  }
+}
